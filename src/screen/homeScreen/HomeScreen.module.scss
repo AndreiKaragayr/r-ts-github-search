@@ -1,0 +1,29 @@
+@import "src/assets/scss/veriabel";
+@import "src/assets/scss/mixins";
+
+.root {
+
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 -10px;
+  flex-wrap: wrap;
+
+  & .col12 {
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding: 0 10px;
+  }
+}
+
+.mb3 {
+  margin-bottom: 30px;
+}
+
+.text {
+  font-family: $RobotoRegular;
+  font-size: 14px;
+  line-height: 20px;
+}

@@ -1,0 +1,62 @@
+@import "src/assets/scss/veriabel";
+@import "src/assets/scss/mixins";
+
+.root {
+
+}
+
+.head {
+  margin-bottom: 40px;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  margin: 0 -10px;
+}
+
+.col2 {
+  max-width: 220px;
+  flex: 0 0 220px;
+  padding: 0 10px;
+}
+
+.col10 {
+  max-width: calc(100% - 220px);
+  flex: 0 0 calc(100% - 220px);
+  padding: 0 10px;
+}
+
+.image {
+  max-width: 100%;
+  display: block;
+}
+
+.article {
+  box-shadow: $boxShadow;
+  padding: 10px;
+}
+
+.list {
+  display: flex;
+  align-items: flex-end;
+  font-family: $RobotoLight;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & .label {
+    opacity: 0.6;
+    margin-right: 10px;
+  }
+}
+
+.text {
+  font-family: $RobotoRegular;
+  font-size: 16px;
+  line-height: 20px;
+}
