@@ -12,14 +12,12 @@ export const getRepoListByNameSelector = (state: RootState) => {
   return state.user.repoList
 }
 
+export const getSearchValueRepo = (state: RootState) => {
+  // @ts-ignore
+  return state.user.repoSearch
+}
 
 export const getLoading = (state: RootState) => {
   // @ts-ignore
   return state.user.loading
 }
-
-// export const getUsersLists = createSelector(
-//   getUsersListsSelector,
-//   (usersLists: Array<IUser>) => usersLists.filter(user => true)
-// )
-

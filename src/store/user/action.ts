@@ -1,23 +1,23 @@
 import * as api from '../../api/services/users.api';
-import {ActionsRepoListByNameType, ActionsUserByNameType } from '../../types/actions/types';
+import {ActionsRepoListByNameType, ActionsRepoSearchType, ActionsUserByNameType } from '../../types/actions/types';
 import {USER} from "./type";
 import {RootState} from "../reducers";
 import { ThunkAction } from 'redux-thunk';
 
 export const getUserByName = (username: string): ThunkAction<Promise<void>, RootState, unknown, ActionsUserByNameType> => async (dispatch, getState) => {
-  await dispatch({type: USER.GET.REQUEST})
+  await dispatch({type: USER.GET_USER.REQUEST})
   await api.getUserByName(username)
     .then((res) => {
       console.log('RES: ', res)
       return dispatch({
-        type: USER.GET.SUCCESS,
+        type: USER.GET_USER.SUCCESS,
         payload: res,
       })
     })
     .catch(err => {
       console.error('err: ', err)
       return dispatch({
-        type: USER.GET.FAILURE,
+        type: USER.GET_USER.FAILURE,
         payload: err,
       });
     });
@@ -42,3 +42,10 @@ export const getRepoListByName = (username: string): ThunkAction<Promise<void>, 
     });
 }
 
+export const setSearchRepo = (value: string): ThunkAction<void, RootState, unknown, ActionsRepoSearchType> => async (dispatch, getState) => {
+  dispatch({type: USER.SEARCH_REPO.REQUEST})
+  dispatch({
+    type: USER.SEARCH_REPO.SUCCESS,
+    payload: value
+  })
+}

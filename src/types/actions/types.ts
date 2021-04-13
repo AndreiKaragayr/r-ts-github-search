@@ -167,18 +167,38 @@ interface IUsersFailure {
   payload: string,
 }
 
+interface IUserSearchRequest {
+  type: typeof USERS.SEARCH_USER.REQUEST,
+  payload?: any
+}
+
+interface IUserSearchSuccess {
+  type: typeof USERS.SEARCH_USER.SUCCESS,
+  payload: string,
+}
+
+interface IRepoSearchRequest {
+  type: typeof USER.SEARCH_REPO.REQUEST,
+  payload?: any
+}
+
+interface IRepoSearchSuccess {
+  type: typeof USER.SEARCH_REPO.SUCCESS,
+  payload: string,
+}
+
 interface IGetUserByNameRequest {
-  type: typeof USER.GET.REQUEST,
+  type: typeof USER.GET_USER.REQUEST,
   payload?: any
 }
 
 interface IGetUserByNameSuccess {
-  type: typeof USER.GET.SUCCESS,
+  type: typeof USER.GET_USER.SUCCESS,
   payload: object,
 }
 
 interface IGetUserByNameFailure {
-  type: typeof USER.GET.FAILURE,
+  type: typeof USER.GET_USER.FAILURE,
   payload: string,
 }
 
@@ -198,6 +218,8 @@ interface IGetRepoListByNameFailure {
 }
 
 export type ActionsUsersType = IUsersRequest | IUsersSuccess | IUsersFailure;
+export type ActionsUserSearchType = IUserSearchRequest | IUserSearchSuccess;
+export type ActionsRepoSearchType = IRepoSearchRequest | IRepoSearchSuccess;
 export type ActionsUserByNameType = IGetUserByNameRequest | IGetUserByNameSuccess | IGetUserByNameFailure;
 export type ActionsRepoListByNameType = IGetRepoListByNameRequest | IGetRepoListByNameSuccess | IGetRepoListByNameFailure;
 
